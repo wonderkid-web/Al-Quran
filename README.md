@@ -9,3 +9,5 @@ Di website ini, tersedia beberapa fitur diantaranya :
 3. Tersedia juga cerita-cerita para Nabi(Future)
 
 Dalam project ini saya menggunakan API Al-Qur'an dari https://github.com/rzkytmgr/quran-api
+
+Berikut adalah link page nya : https://wonderkid-web.github.io/Al-Quran/
