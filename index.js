@@ -31,5 +31,4 @@ function muatHalaman(){
 	const myForm = document.querySelector('#search_form');
 	myForm.addEventListener("submit", tampilkanAyat);
 }
-
 window.addEventListener("load", muatHalaman);
