@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+	*{
+		list-style: none;
+	}
+	.ul{
+		font-size: 2em;
+		font-family: 'Scheherazade New', serif;
+		font-weight: normal;
+		line-height: 46px;
+		direction: rtl;
+	}
+	@media only screen and (max-width: 600px)  {
+		.ul{
+			font-size: 1.5em;
+		}
+		
+	}
+}
+</style>
+<body>
+	<form id="search_form">
+	  <div class="m-3 w-50">
+	    <label for="exampleInputEmail1" class="form-label">Surah didalam Alquran</label>
+	    <input type="text" placeholder="ketik surah ke.." class="form-control" name="cari" id="exampleInputEmail1" aria-describedby="emailHelp">
+	    <button type="submit" class="mt-2 btn btn-primary">Submit</button>
+	  </div>
+	</form>
+<ul class="ul text-sm"></ul>
+
+
+
+
+
+
+
+
+
+
+
+	 <!--    <form id="search_form">
+    	<input placeholder="surah.." name="search" id="search" type="text" class="validate">
+         <label for="search">First Name</label> -->
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+            
+<script src="index.js"></script>
+</body>
+</html>
