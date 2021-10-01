@@ -7,27 +7,15 @@
 </head>
   <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
-	*{
-		list-style: none;
-	}
-	.ul{
-		font-size: 2em;
-		font-family: 'Scheherazade New', serif;
-		font-weight: normal;
-		line-height: 46px;
-		direction: rtl;
-	}
-	@media only screen and (max-width: 600px)  {
-		.ul{
-			font-size: 1.5em;
-		}
-		
-	}
-}
+
 </style>
 <body>
+	<h1 class="text-center">Jadwal Sholat</h1>
+	<ul class="ul_waktu"></ul>
+
 	<form id="search_form">
 	  <div class="m-3 w-50">
 	    <label for="exampleInputEmail1" class="form-label">Kumpulan Surah-surah lengkap yang ada di dalam Al-Qur'an</label>
@@ -35,7 +23,7 @@
 	    <button type="submit" class="mt-2 btn btn-primary">Submit</button>
 	  </div>
 	</form>
-<ul class="ul text-sm"></ul>
+<ul class="ul_quran text-sm"></ul>
 
 
 

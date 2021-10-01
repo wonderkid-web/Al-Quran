@@ -1,0 +1,31 @@
+*{
+	list-style: none;
+}
+.ul_quran{
+	font-size: 2em;
+	font-family: 'Scheherazade New', serif;
+	font-weight: normal;
+	line-height: 46px;
+	direction: rtl;
+}
+.ul_waktu{
+  	margin-left: -32px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 5px;
+	text-align: center;
+}
+.ul_waktu > li{
+	background: #eee;
+}
+	@media only screen and (max-width: 600px)  {
+		.ul_quran{
+			font-size: 1.5em;
+		}
+		.ul_waktu{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+		
+	}
+}
