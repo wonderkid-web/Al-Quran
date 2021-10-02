@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Abizar</title>
 </head>
   <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -13,38 +13,97 @@
 
 </style>
 <body>
-	<h1 class="text-center">Jadwal Sholat</h1>
-	<div class="container">
-		<ul class="ul_waktu row"></ul>
-		
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light text-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    	 <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTUxMiAyNTZjMCAxNDEuMzg1LTExNC42MTUgMjU2LTI1NiAyNTZzLTI1Ni0xMTQuNjE1LTI1Ni0yNTYgMTE0LjYxNS0yNTYgMjU2LTI1NiAyNTYgMTE0LjYxNSAyNTYgMjU2eiIgZmlsbD0iIzQwYzFmYSIvPjxwYXRoIGQ9Im00MjQuMjY3IDI5M2MwIDkyLjkzMS03NS4zMzYgMTY4LjI2Ny0xNjguMjY3IDE2OC4yNjdzLTE2OC4yNjctNzUuMzM2LTE2OC4yNjctMTY4LjI2NyA3NS4zMzYtMTY4LjI2NyAxNjguMjY3LTE2OC4yNjcgMTY4LjI2NyA3NS4zMzYgMTY4LjI2NyAxNjguMjY3eiIgZmlsbD0iIzkzZGNmYyIvPjxwYXRoIGQ9Im00NTEgMzM3YzAgMTkuMzMtMTUuNjcgMzUtMzUgMzVoLTY0LjUwNmMtNi4zMTMgNi4xODYtMTQuOTU4IDEwLTI0LjQ5NCAxMGgtMjguMzY5Yy00LjM2OCA5LjE5NC0xMi42MjUgMTYuMTgxLTIyLjY0NSAxOC44MzUuMDA5LjI1Mi4wMTQuNTA2LjAxNC43NnY3OC40MDVoMTdjMTQuODkgMCAyNy42MDkgOS4yOTkgMzIuNjY1IDIyLjQwNi0yMi4xNDkgNi4yNS00NS41MTYgOS41OTQtNjkuNjY1IDkuNTk0cy00Ny41MTYtMy4zNDQtNjkuNjY1LTkuNTk0YzUuMDU2LTEzLjEwNyAxNy43NzQtMjIuNDA2IDMyLjY2NS0yMi40MDZoMTd2LTc4LjQwNGMwLS4yNTUuMDA1LS41MDguMDE0LS43Ni0xMC4wMi0yLjY1NC0xOC4yNzgtOS42NDItMjIuNjQ1LTE4LjgzNWgtMjguMzY5Yy05LjUzNiAwLTE4LjE4Mi0zLjgxNC0yNC40OTQtMTBoLTY0LjUwNmMtMTkuMzMgMC0zNS0xNS42Ny0zNS0zNXMxNS42Ny0zNSAzNS0zNWgzMjBjMTkuMzMtLjAwMSAzNSAxNS42NjkgMzUgMzQuOTk5eiIgZmlsbD0iIzM3NjA5OSIvPjxwYXRoIGQ9Im00ODQgMzcuODU5djI4Ny42NzFjMCA5LjMxMS04LjM5NCAxNi4zNzMtMTcuNTY4IDE0Ljc3OWwtNDIuNTAyLTcuMzg1Yy0zNy44MTUtNi41NzEtNzguNDM4LTEuNTA1LTExNi4xNTkgMTQuNDg0LTE2Ljg0NCA3LjE0LTM0LjI3IDEyLjEwMi01MS43NzEgMTQuODIyLTE3LjUwMS0yLjcyLTM0LjkyOC03LjY4My01MS43NzEtMTQuODIyLTM3LjcyLTE1Ljk4OS03OC4zNDQtMjEuMDU0LTExNi4xNTktMTQuNDg0bC00Mi41MDIgNy4zODVjLTkuMTc0IDEuNTkzLTE3LjU2OC01LjQ2OS0xNy41NjgtMTQuNzh2LTI4Ny42N2MwLTcuMjkzIDUuMjQ1LTEzLjUyOSAxMi40My0xNC43NzhsNDcuNjA3LTguMjc4YzM3LjgyMS02LjU3NiA3OC40NTItMS41MTIgMTE2LjE3OSAxNC40OGwuMTI2LjA1M2MxNi44MDggNy4xMjQgMzQuMTk2IDEyLjA4MSA1MS42NTggMTQuODA1IDE3LjQ2Mi0yLjcyNCAzNC44NS03LjY4MSA1MS42NTctMTQuODA1bC4xMjYtLjA1M2MzNy43MjctMTUuOTkyIDc4LjM1OS0yMS4wNTYgMTE2LjE3OS0xNC40OGw0Ny42MDcgOC4yNzhjNy4xODYgMS4yNDkgMTIuNDMxIDcuNDg1IDEyLjQzMSAxNC43Nzh6IiBmaWxsPSIjMTY4YzgwIi8+PHBhdGggZD0ibTEyMCAxMi4wMDN2MzE4LjEyNGMtMTAuNzc4LjA1MS0yMS40NjIuOTc3LTMxLjkzIDIuNzk2bC00Mi41MDIgNy4zODVjLTkuMTc0IDEuNTk0LTE3LjU2OC01LjQ2OC0xNy41NjgtMTQuNzc5di0yODcuNjdjMC03LjI5MyA1LjI0NS0xMy41MjkgMTIuNDMtMTQuNzc4bDQ3LjYwNy04LjI3OGMxMC40OC0xLjgyMyAyMS4xNzQtMi43NSAzMS45NjMtMi44eiIgZmlsbD0iIzE0N2Q3MyIvPjxwYXRoIGQ9Im0yNTYgMzAydjIxMGMtMjQuMTQ5IDAtNDcuNTE2LTMuMzQ0LTY5LjY2NS05LjU5NCA1LjA1Ni0xMy4xMDcgMTcuNzc0LTIyLjQwNiAzMi42NjUtMjIuNDA2aDE3di03OC40MDRjMC0uMjU1LjAwNS0uNTA4LjAxNC0uNzYtMTAuMDItMi42NTQtMTguMjc4LTkuNjQyLTIyLjY0NS0xOC44MzVoLTI4LjM2OWMtOS41MzYgMC0xOC4xODItMy44MTQtMjQuNDk0LTEwaC02NC41MDZjLTE5LjMzIDAtMzUtMTUuNjctMzUtMzVzMTUuNjctMzUgMzUtMzVoMTYweiIgZmlsbD0iIzJlNTE4MCIvPjxwYXRoIGQ9Im00NTggNDcuNzV2MzA2LjMxMWwtNTMuMjItMTAuMDVjLTMzLjUwMy02LjMyNy02OS40OTQtMS40NS0xMDIuOTEzIDEzLjk0Ni0xNC45MjMgNi44NzUtMzAuMzYyIDExLjY1My00NS44NjcgMTQuMjcydi0zMDYuMjgxYzE1LjQ3MS0yLjYyMyAzMC44NzYtNy4zOTYgNDUuNzY2LTE0LjI1NmwuMTEyLS4wNTFjMzMuNDI1LTE1LjM5OCA2OS40MjMtMjAuMjc0IDEwMi45MzEtMTMuOTQzeiIgZmlsbD0iI2ZmZDk5MyIvPjxwYXRoIGQ9Im00NTggNDcuNzV2MzA2LjMxMWwtNTMuMjItMTAuMDVjLTguMDYzLTEuNTIzLTE2LjI3MS0yLjM5Ni0yNC41NTItMi42MzEtNDMuOTc2LTEuMjQ0LTc2Ljc2Ni0zMC4xOTEtODkuMDE5LTcyLjA3LS4zMjYtMS4xMTMtLjY1NS0xNjEuODk1LS42NTUtMTYxLjg5NSAxNC41MzEtNDguNjk4IDYzLjMxNS03OS4wMTMgMTEzLjMxLTY5Ljg5Mi4zMTUuMDU4LjYzLjExNi45NDUuMTc2eiIgZmlsbD0iI2ZmZmFjMSIvPjxwYXRoIGQ9Im0yNTYgNjUuOTQ4djMwNi4yODFjLTE1LjUwNS0yLjYxOS0zMC45NDUtNy4zOTctNDUuODY3LTE0LjI3Mi0zMy40MTktMTUuMzk2LTY5LjQxLTIwLjI3My0xMDIuOTEzLTEzLjk0NmwtNTMuMjIgMTAuMDV2LTMwNi4zMTFsNTMuMTkxLTEwLjA1MmMzMy41MDgtNi4zMzIgNjkuNTA2LTEuNDU2IDEwMi45MzEgMTMuOTQzbC4xMTIuMDUxYzE0Ljg5IDYuODYgMzAuMjk1IDExLjYzMyA0NS43NjYgMTQuMjU2eiIgZmlsbD0iI2ZmY2Q3MSIvPjxwYXRoIGQ9Im0yNTYgNjUuOTQ4djMwNi4yODFjLTE1LjUwNS0yLjYxOS0zMC45NDUtNy4zOTctNDUuODY3LTE0LjI3Mi0yOC40NjItMTMuMTEyLTU4Ljc4OS0xOC41OTQtODcuODU2LTE2LjAyNHYtMzA2LjMxN2MyOS4wNjQtMi41NjggNTkuMzg3IDIuOTE1IDg3Ljg0NSAxNi4wMjVsLjExMi4wNTFjMTQuODkgNi44NiAzMC4yOTUgMTEuNjMzIDQ1Ljc2NiAxNC4yNTZ6IiBmaWxsPSIjZmZkOTkzIi8+PHBhdGggZD0ibTQyNC45MjggNzEuMDE0LTI1LjUwNC00LjgxOWMtNy43MDUtMS40NTctMTUuNjk1LTIuMTk1LTIzLjc0OS0yLjE5NS0yMC40ODYgMC00MS44MDkgNC44MzQtNjEuNjU5IDEzLjk3OWwtLjEyNS4wNThjLTguMjczIDMuODEyLTE2LjgxNyA3LjExNS0yNS4zOTUgOS44MTktMi4wODIuNjU2LTMuNDk3IDIuNTg2LTMuNDk3IDQuNzY5djIzMy4zODJjMCAxLjY5NC44NTggMy4yNzIgMi4yNzkgNC4xOTQuODIzLjUzNCAxLjc3LjgwNiAyLjcyMi44MDYuNjkyIDAgMS4zODctLjE0NCAyLjAzOC0uNDM1IDI2Ljc1Mi0xMS45NDMgNTUuNjY5LTE4LjI1NiA4My42MjYtMTguMjU2IDExLjY1MiAwIDIzLjI1OCAxLjA3NiAzNC40OTggMy4xOTlsMTIuOTEgMi40MzhjMS40NjMuMjc4IDIuOTczLS4xMTMgNC4xMTktMS4wNjNzMS44MDktMi4zNjEgMS44MDktMy44NXYtMjM3LjExM2MwLTIuNDA0LTEuNzEtNC40NjctNC4wNzItNC45MTN6bS01LjkyOCAyMzUuOTkzLTYuOTgyLTEuMzE4Yy0xMS44NS0yLjIzOC0yNC4wODEtMy4zNzMtMzYuMzU0LTMuMzczLTI2LjkwOSAwLTU0LjY0MSA1LjU2LTgwLjY2NCAxNi4xMjZ2LTIyMi4xODRjNy43OTktMi42MDMgMTUuNTQ1LTUuNjcgMjMuMDcyLTkuMTM4bC4xMjUtLjA1OGMxOC41NS04LjU0NSAzOC40MjYtMTMuMDYyIDU3LjQ3OC0xMy4wNjIgNy40MzMgMCAxNC43OTguNjggMjEuODkyIDIuMDIxbDIxLjQzMyA0LjA0OXoiIGZpbGw9IiNmZmNkNzEiLz48cGF0aCBkPSJtMjIzLjUwNCA4Ny44NTVjLTguNTgyLTIuNzA2LTE3LjEyOS02LjAxMi0yNS4zOTgtOS44MmwtLjExLS4wNTFjLTE5Ljg1OS05LjE0OC00MS4xODQtMTMuOTg0LTYxLjY2OC0xMy45ODQtOC4wNTcgMC0xNi4wNDguNzM4LTIzLjc1MSAyLjE5NGwtMjUuNTA0IDQuODE5Yy0yLjM2My40NDctNC4wNzMgMi41MS00LjA3MyA0LjkxNHYyMzcuMTEyYzAgMS40ODguNjYzIDIuODk5IDEuODA5IDMuODVzMi42NTQgMS4zNDIgNC4xMTkgMS4wNjNsMTIuOTEtMi40MzhjMTEuMjQtMi4xMjMgMjIuODQ3LTMuMTk5IDM0LjQ5OS0zLjE5OSAyNy45NTguMDAxIDU2Ljg3NSA2LjMxMyA4My42MjUgMTguMjU2LjY1MS4yOTEgMS4zNDYuNDM1IDIuMDM4LjQzNS45NTIgMCAxLjg5OS0uMjcxIDIuNzIyLS44MDYgMS40MjEtLjkyMiAyLjI3OS0yLjUgMi4yNzktNC4xOTR2LTIzMy4zODJjLS4wMDEtMi4xODMtMS40MTYtNC4xMTItMy40OTctNC43Njl6bS02LjUwNCAyMzAuNTg2Yy0yNi4wMjMtMTAuNTY1LTUzLjc1NC0xNi4xMjUtODAuNjY0LTE2LjEyNi0xMi4yNzIgMC0yNC41MDQgMS4xMzUtMzYuMzU0IDMuMzczbC02Ljk4MiAxLjMxOXYtMjI2LjkzN2wyMS40MzMtNC4wNWM3LjA5My0xLjM0IDE0LjQ2LTIuMDIgMjEuODk3LTIuMDIgMTkuMDQ5IDAgMzguOTI2IDQuNTE5IDU3LjQ3NyAxMy4wNjNsLjEwOS4wNTFjNy41MzIgMy40NyAxNS4yODEgNi41MzkgMjMuMDg0IDkuMTQ0eiIgZmlsbD0iI2ZmYjY1NSIvPjxwYXRoIGQ9Im0yMjcgNDAzYzAtMi43NjEgMi4yMzktNSA1LTVoNDhjMi43NjEgMCA1IDIuMjM5IDUgNXMtMi4yMzkgNS01IDVoLTQ4Yy0yLjc2MSAwLTUtMi4yMzktNS01em01MyA2OGgtNDhjLTIuNzYxIDAtNSAyLjIzOS01IDVzMi4yMzkgNSA1IDVoNDhjMi43NjEgMCA1LTIuMjM5IDUtNXMtMi4yMzktNS01LTV6IiBmaWxsPSIjMWMzMTRlIi8+PHBhdGggZD0ibTI1NiAzODhjLTIuNzYxIDAtNS0yLjIzOS01LTV2LTExMi43MDJjMC0yLjc2MSAyLjIzOS01IDUtNSAyLjc2MSAwIDUgMi4yMzkgNSA1djExMi43MDJjMCAyLjc2MS0yLjIzOSA1LTUgNXoiIGZpbGw9IiNkZDdkMDAiLz48cGF0aCBkPSJtMjY3LjUgMzkyLjV2NTEuNWgtMjN2LTUxLjVjMC02LjM1MSA1LjE0OS0xMS41IDExLjUtMTEuNXMxMS41IDUuMTQ5IDExLjUgMTEuNXoiIGZpbGw9IiNmZmI2NTUiLz48cGF0aCBkPSJtMjY3LjUgNDE5LjV2MjQuNWgtMjN2LTI0LjVjMC02LjM1MSA1LjE0OS0xMS41IDExLjUtMTEuNXMxMS41IDUuMTQ5IDExLjUgMTEuNXoiIGZpbGw9IiNmZmNkNzEiLz48cGF0aCBkPSJtMjU2IDI4Ni4xNDljLTIuNzYxIDAtNS0yLjIzOS01LTV2LTIzOC4xNDljMC0yLjc2MSAyLjIzOS01IDUtNSAyLjc2MSAwIDUgMi4yMzkgNSA1djIzOC4xNDljMCAyLjc2MS0yLjIzOSA1LTUgNXptMCA3NS44NTFjLTcuNDU2IDAtMTMuNSA2LjA0NC0xMy41IDEzLjVzNi4wNDQgMTMuNSAxMy41IDEzLjUgMTMuNS02LjA0NCAxMy41LTEzLjUtNi4wNDQtMTMuNS0xMy41LTEzLjV6IiBmaWxsPSIjZmY5ZjIyIi8+PHBhdGggZD0ibTIzOCAxOTEtMjQuMzEgMjQuMzF2My4yMjhjMCAxNy4yMDUtMTMuOTQ3IDMxLjE1Mi0zMS4xNTIgMzEuMTUyaC0zLjIyN2wtOC44NDQgOC44NDRjLjU1NS4zNjUgMS4wOTQuNzUzIDEuNjE2IDEuMTY0IDkuNDM0IDcuNDM1IDkuNDM0IDE5LjQ5IDAgMjYuOTI2bC0xNy4wODMgMTMuNDYzLTE3LjA4Mi0xMy40NjNjLTkuNDM0LTcuNDM2LTkuNDM0LTE5LjQ5MSAwLTI2LjkyNi41MjEtLjQxMSAxLjA2LS43OTkgMS42MTYtMS4xNjRsLTguODQ0LTguODQ0aC0zLjIyN2MtMTcuMjA1IDAtMzEuMTUyLTEzLjk0OC0zMS4xNTItMzEuMTUydi0zLjIyOGwtMjQuMzExLTI0LjMxIDI0LjMxLTI0LjMxdi0zLjIyOGMwLTE3LjIwNSAxMy45NDctMzEuMTUyIDMxLjE1Mi0zMS4xNTJoMy4yMjdsOC44NDQtOC44NDRjLS41NTUtLjM2NS0xLjA5NC0uNzUzLTEuNjE2LTEuMTY0LTkuNDM0LTcuNDM1LTkuNDM0LTE5LjQ5IDAtMjYuOTI2bDE3LjA4My0xMy40NjMgMTcuMDgyIDEzLjQ2M2M5LjQzNCA3LjQzNiA5LjQzNCAxOS40OTEgMCAyNi45MjYtLjUyMS40MTEtMS4wNi43OTktMS42MTYgMS4xNjRsOC44NDQgOC44NDRoMy4yMjdjMTcuMjA1IDAgMzEuMTUyIDEzLjk0OCAzMS4xNTIgMzEuMTUydjMuMjI4eiIgZmlsbD0iI2ZmN2M0OCIvPjxwYXRoIGQ9Im0yMDQuMjc3IDE5MWMwIDI3LjIxNS0yMi4wNjIgNDkuMjc3LTQ5LjI3NyA0OS4yNzdzLTQ5LjI3Ny0yMi4wNjItNDkuMjc3LTQ5LjI3NyAyMi4wNjItNDkuMjc3IDQ5LjI3Ny00OS4yNzcgNDkuMjc3IDIyLjA2MiA0OS4yNzcgNDkuMjc3eiIgZmlsbD0iI2Y3NjkzNyIvPjxwYXRoIGQ9Im0xOTEuNjgxIDE5MWMwIDIwLjI1OC0xNi40MjMgMzYuNjgxLTM2LjY4MSAzNi42ODFzLTM2LjY4MS0xNi40MjMtMzYuNjgxLTM2LjY4MWMwLTIwLjI1OSAxNi40MjMtMzYuNjgxIDM2LjY4MS0zNi42ODFzMzYuNjgxIDE2LjQyMiAzNi42ODEgMzYuNjgxeiIgZmlsbD0iI2ZmYWQ4YyIvPjxwYXRoIGQ9Im00NDIgMTkxLTI0LjMxIDI0LjMxdjMuMjI4YzAgMTcuMjA1LTEzLjk0NyAzMS4xNTItMzEuMTUyIDMxLjE1MmgtMy4yMjdsLTguODQ0IDguODQ0Yy41NTUuMzY1IDEuMDk0Ljc1MyAxLjYxNiAxLjE2NCA5LjQzNCA3LjQzNSA5LjQzNCAxOS40OSAwIDI2LjkyNmwtMTcuMDgzIDEzLjQ2My0xNy4wODItMTMuNDYzYy05LjQzNC03LjQzNi05LjQzNC0xOS40OTEgMC0yNi45MjYuNTIxLS40MTEgMS4wNi0uNzk5IDEuNjE2LTEuMTY0bC04Ljg0NC04Ljg0NGgtMy4yMjdjLTE3LjIwNSAwLTMxLjE1Mi0xMy45NDgtMzEuMTUyLTMxLjE1MnYtMy4yMjhsLTI0LjMxMS0yNC4zMSAyNC4zMS0yNC4zMXYtMy4yMjhjMC0xNy4yMDUgMTMuOTQ3LTMxLjE1MiAzMS4xNTItMzEuMTUyaDMuMjI3bDguODQ0LTguODQ0Yy0uNTU1LS4zNjUtMS4wOTQtLjc1My0xLjYxNi0xLjE2NC05LjQzNC03LjQzNS05LjQzNC0xOS40OSAwLTI2LjkyNmwxNy4wODMtMTMuNDYzIDE3LjA4MiAxMy40NjNjOS40MzQgNy40MzYgOS40MzQgMTkuNDkxIDAgMjYuOTI2LS41MjEuNDExLTEuMDYuNzk5LTEuNjE2IDEuMTY0bDguODQ0IDguODQ0aDMuMjI3YzE3LjIwNSAwIDMxLjE1MiAxMy45NDggMzEuMTUyIDMxLjE1MnYzLjIyOHoiIGZpbGw9IiNmZmI2NTUiLz48cGF0aCBkPSJtMTQwIDE3MWMwLTIuNzYxIDIuMjM5LTUgNS01aDIwYzIuNzYxIDAgNSAyLjIzOSA1IDVzLTIuMjM5IDUtNSA1aC0yMGMtMi43NjEgMC01LTIuMjM5LTUtNXptMjUgMzVoLTIwYy0yLjc2MSAwLTUgMi4yMzktNSA1czIuMjM5IDUgNSA1aDIwYzIuNzYxIDAgNS0yLjIzOSA1LTVzLTIuMjM5LTUtNS01em0xMC0yMGgtNDBjLTIuNzYxIDAtNSAyLjIzOS01IDVzMi4yMzkgNSA1IDVoNDBjMi43NjEgMCA1LTIuMjM5IDUtNXMtMi4yMzktNS01LTV6IiBmaWxsPSIjZWE1NTJkIi8+PHBhdGggZD0ibTQwOC4yNzcgMTkxYzAgMjcuMjE1LTIyLjA2MiA0OS4yNzctNDkuMjc3IDQ5LjI3N3MtNDkuMjc3LTIyLjA2Mi00OS4yNzctNDkuMjc3IDIyLjA2Mi00OS4yNzcgNDkuMjc3LTQ5LjI3NyA0OS4yNzcgMjIuMDYyIDQ5LjI3NyA0OS4yNzd6IiBmaWxsPSIjZmY5MTAwIi8+PHBhdGggZD0ibTM5NS42ODEgMTkxYzAgMjAuMjU4LTE2LjQyMyAzNi42ODEtMzYuNjgxIDM2LjY4MXMtMzYuNjgxLTE2LjQyMy0zNi42ODEtMzYuNjgxYzAtMjAuMjU5IDE2LjQyMy0zNi42ODEgMzYuNjgxLTM2LjY4MXMzNi42ODEgMTYuNDIyIDM2LjY4MSAzNi42ODF6IiBmaWxsPSIjZmZkOTkzIi8+PHBhdGggZD0ibTM0NCAxNzFjMC0yLjc2MSAyLjIzOS01IDUtNWgyMGMyLjc2MSAwIDUgMi4yMzkgNSA1cy0yLjIzOSA1LTUgNWgtMjBjLTIuNzYxIDAtNS0yLjIzOS01LTV6bTI1IDM1aC0yMGMtMi43NjEgMC01IDIuMjM5LTUgNXMyLjIzOSA1IDUgNWgyMGMyLjc2MSAwIDUtMi4yMzkgNS01cy0yLjIzOS01LTUtNXptMTAtMjBoLTQwYy0yLjc2MSAwLTUgMi4yMzktNSA1czIuMjM5IDUgNSA1aDQwYzIuNzYxIDAgNS0yLjIzOSA1LTVzLTIuMjM5LTUtNS01eiIgZmlsbD0iI2ZmOTEwMCIvPjwvZz48L3N2Zz4=" alt="" width="30" height="24" class="d-inline-block align-text-top">
+
+    	<span class="h1 abizar" style="color: #eee">Abizar</span>
+    </a>
+    <button class="navbar-toggler btn-bg-light btn-outline-light btn-outline-light btn-nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#waktu_sholat">Waktu Sholat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#quran">Al-Qur'an</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Murotal</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Maqam Murotal
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Jiharkah</a></li>
+            <li><a class="dropdown-item" href="#">Kurdi</a></li>
+            <li><a class="dropdown-item" href="#">Nahawand</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Waktu sholat -->
+	<section id="waktu_sholat">
+		<div class="container-lg">
+			<div class="text-center">
+				<h2 class="lokasi">Jadwal Waktu Sholat</h2>
+			</div>
+		</div>
+		<div class="row mx-2 text-center justify-content-evenly ul_waktu gap-1 text-light" >
+			
+		</div>
+		</div>
+	</section>
+
+<!-- Al-Qur'an -->
+<div class="container-lg mt-5" id="quran">
+	<h2 class="text-center">Ayo baca Al-Qur'an!!!</h2>
+	<figure class="text-center">
+  <blockquote class="blockquote">
+    <p>Keutamaan Mempelajari dan Mengajarkan Al-Qur'an</p>
+    <p><i>“Sebaik-baik kalian adalah siapa yang memperlajari Alquran dan mengamalkannya.” (HR Bukhari).</i></p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+   <cite title="Source Title">Abizar</cite>
+  </figcaption>
+</figure>
+<div class="accordion-section">
+	
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+</div>
+
+<!-- <div class="quran mt-5 " id="quran">
+	<h2 class="text-center">Cari dan Baca !</h2>
+	<div class="container-md"> -->
+		<!-- <form id="search_form">
+		  <div class="m-3 w-50">
+		    <label for="quran" class="form-label">Kumpulan Surah-surah lengkap yang ada di dalam Al-Qur'an</label>
+		    <input type="text" placeholder="ketik surah ke.." class="form-control shadow-sm" name="cari" id="quran" aria-describedby="emailHelp">
+		    <button type="submit" class="mt-2 btn btn-success btn-outline-light	shadow-sm btn-quran">Submit</button>
+		  </div>
+		</form> -->
+<!-- 		<ul class="ul_quran text-sm"></ul>
 	</div>
-
-	<form id="search_form">
-	  <div class="m-3 w-50">
-	    <label for="exampleInputEmail1" class="form-label">Kumpulan Surah-surah lengkap yang ada di dalam Al-Qur'an</label>
-	    <input type="text" placeholder="ketik surah ke.." class="form-control" name="cari" id="exampleInputEmail1" aria-describedby="emailHelp">
-	    <button type="submit" class="mt-2 btn btn-primary">Submit</button>
-	  </div>
-	</form>
-<ul class="ul_quran text-sm"></ul>
+</div>
+ -->
 
 
 
-
-
-
-
-
-
-
-
-	 <!--    <form id="search_form">
-    	<input placeholder="surah.." name="search" id="search" type="text" class="validate">
-         <label for="search">First Name</label> -->
-
-
-<!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
             
 <script src="index.js"></script>
 </body>

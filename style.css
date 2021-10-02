@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=PT+Serif&display=swap');
+:root{
+	--baseColor: #4e3056;
+	--jadwalFont:  font-family: 'Bonheur Royale', cursive;;
+}
 *{
 	list-style: none;
+}
+body{
+	background: #e1e1e1;
+}
+nav{
+	background: var(--baseColor);
+}
+.nav-link{
+	color: #fff !important;
+}
+.abizar{
+	font-family: 'Bonheur Royale', cursive;
 }
 .ul_quran{
 	font-size: 2em;
@@ -10,13 +27,60 @@
 }
 .ul_waktu{
   	margin-left: -32px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 5px;
-	text-align: center;
 }
 .ul_waktu > li{
 	background: #eee;
+}
+
+.li_waktu{
+	width: 100% !important;
+	background: var(--baseColor);
+	border-radius: 8px;
+}
+.nav{
+	background: var(--baseColor);
+}
+.btn-nav{
+	background: #eee !important;
+}
+.btn-quran{
+	background: var(--baseColor);
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 	@media only screen and (max-width: 600px)  {
 		.ul_quran{
@@ -26,6 +90,16 @@
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 		}
+	}
+	@media only screen and (min-width: 600px)  {
+		.li_waktu{
+			width: 30% !important;
+		}
 		
 	}
-}
+	@media only screen and (min-width: 800px)  {
+		.li_waktu{
+			width: 30% !important;
+		}
+		
+	}
