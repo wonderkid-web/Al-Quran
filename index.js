@@ -7,17 +7,6 @@ let ul_waktu = document.querySelector('.ul_waktu');
 var acc = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
 
 waktuSholat();
 function waktuSholat(){
@@ -52,41 +41,77 @@ function fetchSurah(){
 	.then(res=>res.json())
 	.then(res=>{
 		const array = res.data;
-		array.forEach(function(surah){
+		array.forEach(function(surah, index){
 			let accordion = document.createElement('button');
+			let panel = document.createElement('div');
+			let p = document.createElement('p');
+
+			panel.appendChild(p);
+			accordion.setAttribute("ayat", `${index+1}`)
 			accordion.classList.add('accordion');
+			panel.classList.add('panel');
+			p.classList.add('p-panel');
 			const namaSurah = document.createTextNode(`${surah.nama}`);
 			 // add the text node to the newly created div
+
 			 accordion.appendChild(namaSurah);
 			 accContainer.appendChild(accordion);
+			 accContainer.appendChild(panel);
 		})
+		let accordions = document.querySelectorAll('.accordion');
+		accordions.forEach(function(e){
+			e.addEventListener("click", function() {
+		    e.classList.toggle("active");
+		    let panel = this.nextElementSibling;
+		    if (panel.style.display === "block") {
+		      panel.style.display = "none";
+		    } else {
+		      panel.style.display = "block";
+		    }
+	 		 });
+		})
+		let pPanel = document.querySelectorAll('.p-panel');
+
+		getAyat(accordions);
+		function getAyat(element){
+			element.forEach(function(e){
+				e.addEventListener('click', function(){
+					let i = e.getAttribute('ayat');
+					let sibling = e.nextElementSibling;
+					fetchAyat(i, sibling);
+				})
+			})
+		}
+
+
+		function fetchAyat(query, sibling){
+			fetch(`${base_url_quran}/${query}`)
+			.then(res=>res.json())
+			.then(res=>{
+				const array = res.data;
+				insertion(array);
+				function insertion(array){
+					array.forEach(function(ayat, index){
+						let li = `<li>
+									${index + 1} | ${ayat.ar} <br>
+									${ayat.id}</span> <br>
+									<span style="font-size: 20px;"><i>${ayat.tr}</i></span>
+									<hr>
+								  </li>`;
+						sibling.innerHTML += li;
+					})
+				}
+			});
+		}
+
+		// akhir
 	})
 }
-function tampilkanAyat(e){
-	e.preventDefault();
+
+
 
 	// const myForm = document.querySelector('#search_form');
 	// const form = new FormData(myForm);
 	// const query = form.get("cari");
 
-	fetch(`${base_url_quran}/`)
-	.then(res=>res.json())
-	.then(res=>{
-		const array = res.data;
-		insertion(array);
-		function insertion(array){
-			array.forEach(function(ayat, index){
-				let li = `<li>
-							${index + 1} | ${ayat.ar} <br>
-							${ayat.id}</span> <br>
-							<span style="font-size: 20px;"><i>${ayat.tr}</i></span>
-							<hr>
-						  </li>`;
-				// ul_quran.innerHTML += li;
-			})
-				console.log(res)
-		}
-	});
-}
-
-window.addEventListener("load", tampilkanAyat);
+	
