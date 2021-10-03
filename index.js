@@ -11,7 +11,7 @@ var i;
 waktuSholat();
 function waktuSholat(){
 	let tahun = new Date().getFullYear();
-	let bulan = new Date().getMonth();
+	let bulan = new Date().getMonth() + 1;
 	let tanggal = new Date().getDate();
 	fetch(`${base_url_waktu}/${tahun}/${bulan}/${tanggal}`)
 	.then(res => res.json())
