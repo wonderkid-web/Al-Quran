@@ -33,7 +33,7 @@
           <a class="nav-link" href="#quran">Al-Qur'an</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Murotal</a>
+          <a class="nav-link" href="#murotal">Murotal</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,8 +55,8 @@
 </nav>
 
 <!-- Waktu sholat -->
-	<section id="waktu_sholat">
-		<div class="container-lg">
+	<section id="waktu_sholat" class="my-4 ">
+		<div class="container-lg my-4">
 			<div class="text-center">
 				<h2 class="lokasi">Jadwal Waktu Sholat</h2>
 			</div>
@@ -67,17 +67,98 @@
 		</div>
 	</section>
 
+<!-- Slider -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://images.unsplash.com/photo-1586767003402-8ade266deb64?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-light">Hallo Kami Abizar</h5>
+        <p class="text-light">Website berbagi murotal <strong>gratis</strong></p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://images.unsplash.com/photo-1594570322022-e7026b28a6c1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGFsJTIwcXVyYW58ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-light">Second slide label</h5>
+        <p class="text-light">Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1624862761909-8b0c87640907?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-light">Third slide label</h5>
+        <p class="text-light">Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Sebelumnya</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Selanjutnya</span>
+  </button>
+</div>
+ 
+<!-- Murotal Playlist -->
+<div class="container-fluid container-murotal my-4 py-1" id="murotal">
+  <div class="row">
+    <h2 class="text-light text-center fw-light my-3 h2-murotal ">Ayo dengerin koleksi Murotal Abizar..!</h2>
+  </div>
+  <div class="row">
+    <div class="card mx-auto card-murotal col-lg-4" style="width: 21rem;">
+      <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Murotal Al-Qur'an</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Qori : Faisal Anwar</li>
+        <li class="list-group-item">Q.S Adh-Dhuhaa Ayat 1-11</li>
+        <li class="list-group-item">Maqam : Jiharkah</li>
+      </ul>
+      <div class="card-body">
+        <audio controls="true">
+          <source src="asset/audio/audio2.mp4" type="audio/mpeg"> 
+        </audio>
+        <a href="asset/audio/audio2.mp4" class="btn btn-primary btn-murotal my-2" download>Download Murotal</a>
+      </div>
+    </div>
+    <div class="card mx-auto my-3 col-lg-4 card-murotal" style="width: 21rem;">
+      <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Murotal Al-Qur'an</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Qori : Agung Wiranata Patiselano</li>
+        <li class="list-group-item">Q.S Al-Bayyinah Ayat 1-8</li>
+        <li class="list-group-item">Maqam : Kurdi</li>
+      </ul>
+      <div class="card-body">
+        <audio controls="true">
+          <source src="asset/audio/audio1.mp3" type="audio/mpeg"> 
+        </audio>
+        <a href="asset/audio/audio1.mp3" class="btn btn-primary btn-murotal my-2" download>Download Murotal</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+       
+  <!-- 
+        <audio controls="true">
+            <source src="asset/audio/audio1.mp3" type="audio/mpeg">
+          Browsermu tidak mendukung tag audio, upgrade donk!
+        </audio> -->
+  
 
- <audio controls="true">
-    <source src="asset/audio/audio2.mp4" type="audio/mpeg">
-      
-    Browsermu tidak mendukung tag audio, upgrade donk!
-</audio>
- <audio controls="true">
-    <source src="asset/audio/audio1.mp3" type="audio/mpeg">
-    Browsermu tidak mendukung tag audio, upgrade donk!
-</audio>
-     <a href="asset/audio/audio1.mp3" download="w3logo"> download</a>
+
 <!-- Al-Qur'an -->
 <div class="container-lg mt-5" id="quran">
 	<h2 class="text-center">Ayo baca Al-Qur'an!!!</h2>
@@ -95,22 +176,14 @@
 </div>
 </div>
 
-<!-- <div class="quran mt-5 " id="quran">
-	<h2 class="text-center">Cari dan Baca !</h2>
-	<div class="container-md"> -->
-		<!-- <form id="search_form">
-		  <div class="m-3 w-50">
-		    <label for="quran" class="form-label">Kumpulan Surah-surah lengkap yang ada di dalam Al-Qur'an</label>
-		    <input type="text" placeholder="ketik surah ke.." class="form-control shadow-sm" name="cari" id="quran" aria-describedby="emailHelp">
-		    <button type="submit" class="mt-2 btn btn-success btn-outline-light	shadow-sm btn-quran">Submit</button>
-		  </div>
-		</form> -->
-<!-- 		<ul class="ul_quran text-sm"></ul>
-	</div>
-</div>
- -->
-
-
+<footer class="footer">
+ <p class="text-light">Website ini dibuat dengan:     </p>
+ <ul>
+   <li class="text-light">Bootstrap 5</li>
+   <li class="text-light">Css</li>
+   <li class="text-light">Vanilla Javascript</li>
+ </ul>
+</footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
