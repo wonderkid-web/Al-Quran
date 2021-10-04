@@ -93,9 +93,9 @@ function fetchSurah(){
 				function insertion(array){
 					array.forEach(function(ayat, index){
 						let li = `<li>
-									${index + 1} | ${ayat.ar} <br>
+									<span class="arti" style="direction: rtl;">${index + 1} | ${ayat.ar}</span>  <br>
 									${ayat.id}</span> <br>
-									<span style="font-size: 20px;"><i>${ayat.tr}</i></span>
+									<span style="font-size: 20px;"><i class="arti-2" style="direction: ltr;">${ayat.tr}</i></span>
 									<hr>
 								  </li>`;
 						sibling.innerHTML += li;

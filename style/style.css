@@ -27,7 +27,10 @@ nav{
 	font-family: 'Scheherazade New', serif;
 	font-weight: normal;
 	line-height: 46px;
-	direction: rtl;
+
+}
+.panel > li > .arti{
+	text-align: center;
 }
 .ul_waktu{
   	margin-left: -32px;
@@ -97,6 +100,7 @@ nav{
 }
 .footer .kiri ul{
 	display: flex;
+	justify-content: center;
 }
 .footer .kiri ul li{
 	margin-left: 8px;
@@ -114,6 +118,12 @@ nav{
 		}
 		.container-murotal{
 			flex-direction: column;
+		}
+		.footer{
+			grid-template-columns: 1fr;
+		}
+		.footer .kiri ul{	
+
 		}
 	}
 	@media only screen and (min-width: 600px)  {
